@@ -22,7 +22,7 @@ function respond() {
   else if(request.text && botRegexTed.test(request.text)) {
     this.res.writeHead(200);
     //postMessage("http://daddyleagues.com/SRMFL/team/"+request.text.substring(5,8)+"/depthchart");
-    postMessage("This works");
+    postMessage("I wish I could figure out how to do more stuff");
     this.res.end();
   } 
   else if(request.text && botRegexSalt.test(request.text)) {
