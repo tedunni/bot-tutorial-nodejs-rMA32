@@ -199,7 +199,7 @@ postMessage("before botReq");
       } else {
         console.log('rejecting bad status code ' + res.statusCode);
       }
-    postMessage(res);
+    postMessage(res.StatusCode);
   });
   
 postMessage("after botReq");
