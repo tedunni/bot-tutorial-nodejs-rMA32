@@ -118,7 +118,11 @@ function respond() {
     postMessage("https://docs.google.com/forms/d/1EEZdnmnftR4OWcyE5z7IIsjBB2AvrzzkeFdPgzIGA5A/viewform");
     this.res.end();
   }
-  
+  else if(request.text && botRegexgetsomething.test(request.text)) {
+    this.res.writeHead(200);
+    getMessage();
+    this.res.end();
+  }
   else if(request.text && botRegexSiege.test(request.text)) {
     this.res.writeHead(200);
     if(0.6 >= Math.random() > 0.3)
@@ -172,23 +176,19 @@ function postMessage(response) {
   botReq.end(JSON.stringify(body));
 }
 
-function getMessage(response) {
-  var botResponse,options, body, botReq;
-
-  botResponse = response
+function getMessage() {
+  var accesstoken, options, body, botReq;
+  accesstoken = "ItQBWvtfFoS2kPDU5P3v3wlln4qMwAgAaZXl0aYs"
 
   options = {
     hostname: 'api.groupme.com',
-    path: '/v3/bots/post',
-    method: 'POST'
+    path: '/v3/groups'
   };
 
   body = {
-    "bot_id" : botID,
-    "text" : botResponse
+    "token" : accesstoken
   };
 
-  console.log('sending ' + botResponse + ' to ' + botID);
 
   botReq = HTTPS.request(options, function(res) {
       if(res.statusCode == 202) {
@@ -197,6 +197,8 @@ function getMessage(response) {
         console.log('rejecting bad status code ' + res.statusCode);
       }
   });
+  
+  postMessage(botReq);
 
   botReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
