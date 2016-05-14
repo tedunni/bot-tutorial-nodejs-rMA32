@@ -11,6 +11,8 @@ function respond() {
       botRegexCC = /^\/cc/;
       botRegexhatesmiley = /^\/hatesmiley/;
       botRegexshovel = /^\/shovel/;
+      botRegexredditlink = /^\/redditlink/;
+      botRegexapplicationlink = /^\/applicationlink/;
       botRegexSiege = /^\/siege/
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
       siege3 = 'https://i.groupme.com/960x960.png.006e180e05d841c6a2962e844bf1e6fd';
@@ -38,11 +40,6 @@ function respond() {
     postMessage("http://www.hackcollege.com/wp-content/uploads/2013/02/kno_advance.jpg");
     this.res.end();
   }
-  else if(request.text && botRegexWarmatchguide.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://docs.google.com/document/d/1ZxGtOBEeh7TJMNFCW72pzVxWLJTkEiGXFs6YeZ0Yv5g");
-    this.res.end();
-  } 
   else if(request.text && botRegexGTA.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://i.groupme.com/220x147.jpeg.a2dd2add32b14fff9e329535186d793c.large");
@@ -106,6 +103,22 @@ function respond() {
     postMessage("https://i.groupme.com/1156x1500.jpeg.00a751d30c254c67a24ecda8f6967725");
     this.res.end();
   }
+  else if(request.text && botRegexWarmatchguide.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://docs.google.com/document/d/1ZxGtOBEeh7TJMNFCW72pzVxWLJTkEiGXFs6YeZ0Yv5g");
+    this.res.end();
+  } 
+  else if(request.text && botRegexredditlink.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://www.reddit.com/r/terpswinb1g/");
+    this.res.end();
+  }
+  else if(request.text && botRegexapplicationlink.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://docs.google.com/forms/d/1EEZdnmnftR4OWcyE5z7IIsjBB2AvrzzkeFdPgzIGA5A/viewform");
+    this.res.end();
+  }
+  
   else if(request.text && botRegexSiege.test(request.text)) {
     this.res.writeHead(200);
     if(0.6 >= Math.random() > 0.3)
