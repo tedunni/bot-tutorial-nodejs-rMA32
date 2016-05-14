@@ -178,6 +178,7 @@ function postMessage(response) {
 }
 
 function getMessage() {
+  postMessage("in getmessage");
   var accesstoken, options, body, botReq;
   accesstoken = "ItQBWvtfFoS2kPDU5P3v3wlln4qMwAgAaZXl0aYs"
 
@@ -197,9 +198,9 @@ function getMessage() {
       } else {
         console.log('rejecting bad status code ' + res.statusCode);
       }
+    postMessage(res);
   });
   
-  postMessage(botReq);
 
   botReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
