@@ -191,6 +191,7 @@ function getMessage() {
     "token" : accesstoken
   };
 
+postMessage("before botReq");
 
   botReq = HTTPS.request(options, function(res) {
       if(res.statusCode == 202) {
@@ -201,6 +202,7 @@ function getMessage() {
     postMessage(res);
   });
   
+postMessage("after botReq");
 
   botReq.on('error', function(err) {
     console.log('error posting message '  + JSON.stringify(err));
