@@ -135,7 +135,7 @@ function respond() {
   else if(request.text && botRegexgif.test(request.text)) {
     this.res.writeHead(200);
     postMessage("1");
-    //var searchTerm = request.text.substr(5);
+    var searchTerm = request.text.substr(5);
     postMessage("2");
 
     /*this.res.writeHead(200);
