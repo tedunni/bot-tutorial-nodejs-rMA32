@@ -16,6 +16,7 @@ function respond() {
       botRegexgetsomething = /^\/getsomething/;
       botRegexhaters = /^\/haters/;
       botRegexgat = /^\/gat/;
+      botRegexeverybodydancenow = /^\/everybodydancenow/;
       botRegexgif = /^\/gif/;
       botRegexSiege = /^\/siege/
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
@@ -132,6 +133,11 @@ function respond() {
     postMessage("http://gifsec.com/wp-content/uploads/GIF/2014/11/Rage-quit-Rage-Raging-Mad-Angry-You-lose-GIF.gif?gs=a");
     this.res.end();
   }
+  else if(request.text && botRegexeverybodydancenow.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://i.groupme.com/300x213.gif.3ebe5fd2f6f14424a37f3c6cf0f0b2fc");
+    this.res.end();
+  }
   else if(request.text && botRegexgif.test(request.text)) {
     this.res.writeHead(200);
     postMessage("1");
@@ -148,8 +154,9 @@ function respond() {
       postMessage("4");
       } 
     });
-    */
+    
     postMessage("5");
+    */
     this.res.end();
   }
   else if(request.text && botRegexgetsomething.test(request.text)) {
