@@ -141,21 +141,16 @@ function respond() {
     /*this.res.writeHead(200);
     postMessage("http://gifsec.com/wp-content/uploads/GIF/2014/11/Rage-quit-Rage-Raging-Mad-Angry-You-lose-GIF.gif?gs=a");
     this.res.end();
-    * /
+    */
 
     request('http://api.giphy.com/v1/gifs/translate?s=' + searchTerm + '&api_key=dc6zaTOxFJmzC&rating=r', function (error, response, body) {
-    postMessage("3");
-    
     if (!error && response.statusCode == 200) {
-      postMessage("3");
       parsedData = JSON.parse(body),
       postMessage(parsedData.data.images.downsized.url);
-      postMessage("4");
       } 
     });
     postMessage("5");
     this.res.end();
-    */
   }
   else if(request.text && botRegexgetsomething.test(request.text)) {
     this.res.writeHead(200);
