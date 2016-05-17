@@ -145,8 +145,7 @@ function respond() {
 
     request('http://api.giphy.com/v1/gifs/translate?s=' + searchTerm + '&api_key=dc6zaTOxFJmzC&rating=r', function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      postMessage("4"),
-      parsedData = JSON.parse(body);
+      postMessage("4");
       } 
     });
     postMessage("5");
