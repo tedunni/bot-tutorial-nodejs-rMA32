@@ -145,13 +145,13 @@ function respond() {
     var requestString = "http://api.giphy.com/v1/gifs/translate?s=" + searchTerm + "&api_key=dc6zaTOxFJmzC&rating=r";
     postMessage(requestString);
 
-/*  
-    request('http://api.giphy.com/v1/gifs/translate?s=' + searchTerm + '&api_key=dc6zaTOxFJmzC&rating=r', function (error, response, body) {
+  
+    request(requestString, function (error, response, body) {
     if (!error && response.statusCode == 200) {
       postMessage("4");
       } 
     });
-  */  
+  
     postMessage("5");
   }
   else if(request.text && botRegexgetsomething.test(request.text)) {
