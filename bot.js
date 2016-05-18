@@ -140,6 +140,7 @@ function respond() {
   }
   else if(request.text && botRegexgif.test(request.text)) {
     postMessage("1");
+    /*
     var searchTerm = request.text.substr(5);
     postMessage(searchTerm);
     var requestString = "http://api.giphy.com/v1/gifs/translate?s=" + searchTerm + "&api_key=dc6zaTOxFJmzC&rating=r";
@@ -151,7 +152,7 @@ function respond() {
       postMessage("4");
       } 
     });
-  
+    */
     postMessage("5");
   }
   else if(request.text && botRegexgetsomething.test(request.text)) {
