@@ -17,7 +17,6 @@ function respond() {
       botRegexhaters = /^\/haters/;
       botRegexgat = /^\/gat/;
       botRegexeverybodydancenow = /^\/everybodydancenow/;
-      botRegexshimmy = /^\/shimmy/;
       botRegexgif = /^\/gif/;
       botRegexSiege = /^\/siege/
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
@@ -137,11 +136,6 @@ function respond() {
   else if(request.text && botRegexeverybodydancenow.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://i.groupme.com/300x213.gif.3ebe5fd2f6f14424a37f3c6cf0f0b2fc");
-    this.res.end();
-  }
-  else if(request.text && botRegexeshimmy.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://stream1.gifsoup.com/view/167771/the-vasquez-shimmy-o.gif");
     this.res.end();
   }
   else if(request.text && botRegexgif.test(request.text)) {
