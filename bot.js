@@ -18,6 +18,10 @@ function respond() {
       botRegexgat = /^\/gat/;
       botRegexeverybodydancenow = /^\/everybodydancenow/;
       botRegexshimmy = /^\/shimmy/;
+      botRegexpwned = /^\/pwned/;
+      botRegexshakeitoff = /^\/shakeitoff/;
+      botRegexwth = /^\/wth/;
+      botRegextoohard = /^\/toohard/;
       botRegexgif = /^\/gif/;
       botRegexSiege = /^\/siege/
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
@@ -142,6 +146,26 @@ function respond() {
   else if(request.text && botRegexshimmy.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://i.groupme.com/400x226.gif.169aa1d54cd1490ba8433b173195986b");
+    this.res.end();
+  }
+  else if(request.text && botRegexpwned.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://i.groupme.com/373x280.gif.3694801ea8b542bc944d2697a6717d1a");
+    this.res.end();
+  }
+  else if(request.text && botRegexshakeitoff.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://i.groupme.com/500x281.gif.d3a17f7aab4e4a0f8b31d471e5908fe7");
+    this.res.end();
+  }
+  else if(request.text && botRegexwth.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://i.groupme.com/541x230.gif.c202a95595e84ee981c33ed748c5e455");
+    this.res.end();
+  }
+  else if(request.text && botRegextoohard.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://i.groupme.com/426x213.gif.b6d8728b28b746549dc5c26ea476feea");
     this.res.end();
   }
   else if(request.text && botRegexgif.test(request.text)) {
